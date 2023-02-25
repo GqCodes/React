@@ -5,7 +5,7 @@ function App() {
   const name = 'Company Name';
   return (
     <div className='App'>
-      <Header company={name} title='Hard Coded' />
+      <Header company={name} />
     </div>
   );
 }
