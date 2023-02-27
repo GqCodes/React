@@ -1,9 +1,13 @@
 import './searchbar.css';
 
-export default function SearchBar() {
+export default function SearchBar({ term, addTerm }) {
+  // const [term, setTerm] = useState('');
+
   const submitted = (e) => {
     e.preventDefault();
     console.log('submitted');
+    // setMyProp(e.target['keyword'].value);
+    addTerm(e.target['keyword'].value);
   };
   const focused = (e) => {
     console.log('onFocus');
@@ -33,6 +37,7 @@ export default function SearchBar() {
           Search
         </button>
       </form>
+      {term ? <p>You searched for {term}</p> : ''}
     </section>
   );
 }
